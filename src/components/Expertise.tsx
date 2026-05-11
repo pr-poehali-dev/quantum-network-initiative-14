@@ -1,30 +1,30 @@
 import { useEffect, useRef, useState } from "react"
-import { Home, Building, Armchair, Trees } from "lucide-react"
 import { HighlightedText } from "./HighlightedText"
+import Icon from "@/components/ui/icon"
 
 const expertiseAreas = [
   {
-    title: "Жилая архитектура",
-    description: "Создаем дома, которые сочетают красоту с комфортом, где каждое пространство служит и форме, и функции.",
-    icon: Home,
+    title: "Консультация",
+    description: "Помогаю разобраться в возможностях вашего пространства, определить стиль и расставить приоритеты ещё до начала проекта.",
+    icon: "MessageCircle",
   },
   {
-    title: "Коммерческие объекты",
+    title: "Цветовые решения",
     description:
-      "Проектируем рабочие пространства, которые вдохновляют на продуктивность и отражают ценности передовых организаций.",
-    icon: Building,
+      "Подбираю палитры, которые создают нужное настроение, визуально расширяют пространство и гармонируют с мебелью и светом.",
+    icon: "Palette",
   },
   {
-    title: "Дизайн интерьеров",
+    title: "Дизайн-проект",
     description:
-      "Создаем интерьеры, которые гармонируют с архитектурной оболочкой, формируя целостный пространственный опыт.",
-    icon: Armchair,
+      "Разрабатываю концепцию интерьера с планировочными решениями, подбором отделочных материалов и мебели.",
+    icon: "PenTool",
   },
   {
-    title: "Градостроительство",
+    title: "Инженерная документация",
     description:
-      "Формируем сообщества через продуманную интеграцию общественных пространств, зданий и природных элементов.",
-    icon: Trees,
+      "Готовлю полный пакет технической документации для строителей: чертежи, развёртки, спецификации.",
+    icon: "FileText",
   },
 ]
 
@@ -59,12 +59,12 @@ export function Expertise() {
         <div className="max-w-3xl mb-20">
           <p className="text-muted-foreground text-sm tracking-[0.3em] uppercase mb-6">Наши услуги</p>
           <h2 className="text-6xl font-medium leading-[1.15] tracking-tight mb-6 text-balance lg:text-8xl">
-            <HighlightedText>Экспертиза</HighlightedText>, отточенная
+            <HighlightedText>Услуги</HighlightedText>, которые
             <br />
-            практикой
+            меняют пространство
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Каждый проект опирается на десятилетия совокупного опыта, создавая архитектуру, которая одновременно инновационна и вневременна.
+            От первой идеи до финального чертежа — сопровождаю каждый этап создания вашего интерьера, чтобы результат превзошёл ожидания.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export function Expertise() {
                     transitionDelay: `${index * 150}ms`,
                   }}
                 >
-                  <Icon className="w-10 h-10 mb-4 text-foreground" strokeWidth={1.25} />
+                  <Icon name={area.icon} size={40} className="mb-4 text-foreground" strokeWidth={1.25} />
                 </div>
                 <h3 className="text-xl font-medium mb-4">{area.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{area.description}</p>
