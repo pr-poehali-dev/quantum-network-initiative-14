@@ -1,5 +1,7 @@
-import { ArrowRight } from "lucide-react"
 import { HighlightedText } from "./HighlightedText"
+import Icon from "@/components/ui/icon"
+
+const PHONE = "79920119244"
 
 export function CallToAction() {
   return (
@@ -20,17 +22,22 @@ export function CallToAction() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:hello@prostranstvo.ru"
-              className="inline-flex items-center justify-center gap-3 bg-primary-foreground text-foreground px-8 py-4 text-sm tracking-wide hover:bg-primary-foreground/90 transition-colors duration-300 group"
+              href={`https://wa.me/${PHONE}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 bg-primary-foreground text-foreground px-8 py-4 text-sm tracking-wide hover:bg-primary-foreground/90 transition-colors duration-300"
             >
-              Начать диалог
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              <Icon name="MessageCircle" size={16} />
+              WhatsApp
             </a>
             <a
-              href="tel:+74951234567"
-              className="inline-flex items-center justify-center gap-2 border border-primary-foreground/30 px-8 py-4 text-sm tracking-wide hover:bg-primary-foreground/10 transition-colors duration-300"
+              href={`https://t.me/+${PHONE}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 border border-primary-foreground/30 px-8 py-4 text-sm tracking-wide hover:bg-primary-foreground/10 transition-colors duration-300"
             >
-              Назначить звонок
+              <Icon name="Send" size={16} />
+              Telegram
             </a>
           </div>
         </div>
